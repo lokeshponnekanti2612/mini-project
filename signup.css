@@ -1,0 +1,104 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: montserrat; */
+    background: rgb(177, 177, 255);
+    /* background: linear-gradient(120deg, #2980b9, #8e44ad); */
+    width: 100%;
+    /* min-height: 100vh; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 450px; */
+    background: white;
+    border-radius: 10px;
+    margin: 5rem 0;
+}
+.center h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid silver;
+}
+.center form {
+    /* margin: 5rem 0; */
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.text_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.text_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.text_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+.text_field input:focus~label,
+.text_field input:valid~label {
+    position: absolute;
+    top: -5px;
+    color: #2691d9;
+}
+.text1_field {
+    display: flex;
+    align-items: flex-start;
+}
+
+.text1_field label {
+    margin-right: 1rem;
+}
+.text2_field {
+    display: flex;
+    align-items: flex-start;
+}
+
+.text2_field label {
+    margin-right: 1rem;
+}
+.buton {
+    background: rgb(85, 85, 255);
+    display: block;
+    margin: 1rem auto;
+    outline: none;
+    border: none;
+    padding: 0.5rem 3rem;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.buton:hover {
+    border: 1px solid rgb(85, 85, 255);
+    color: rgb(85, 85, 255);
+    background: #fff;
+    transform: scale(1.05);
+    font-size: 15px;
+}

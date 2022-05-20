@@ -1,0 +1,110 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #FF0000;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Green {
+    background-color: #4CAF50;
+}
+
+.Green:hover {
+    background-color: #46a049;
+}
+
+.Orange {
+    background-color: #ff9800;
+}
+
+.Orange:hover {
+    background: #e68a00;
+}
+
+.Pink {
+    background-color: #FF1493;
+}
+
+.Pink:hover {
+    background: #0b7dda;
+}
+
+.Red {
+    background-color: #f44336;
+}
+
+.Red:hover {
+    background: #da190b;
+}
+
+.Purple {
+    background-color: #800080;
+}
+
+.Purple:hover {
+    background: #0b7dda;
+}
+
+body {
+    background: url("images/bgm6.jpg");
+    background-repeat: repeat-n;
+    background-size: 1400px 900px;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: rgb(177, 177, 255);
+    /* background: linear-gradient(120deg, #2980b9, #8e44ad); */
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background: white;
+    border-radius: 10px;
+
+}
+
+.center h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid silver;
+}
+
+.center form {
+    padding: 40px;
+    box-sizing: border-box;
+}
