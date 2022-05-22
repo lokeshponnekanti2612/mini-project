@@ -22,7 +22,7 @@ if (mysqli_query($conn, $sqlcreate)) {
 
 	$sql = "INSERT INTO `security`(`username`,`question`,`password`) VALUES('$user','$question','$password')";
 	if (mysqli_query($conn, $sql)) {
-		header("location:pattern_add.php");
+		header("location:pattern1.php");
 	} else {
 	?>
 		<script>

@@ -20,9 +20,6 @@ $confirm_password = $_POST['confirm_password'];
 if ($conn === false) {
     die("ERROR: Could not connect." . mysqli_connect_error());
 }
-// $sqlcreate = "CREATE TABLE IF NOT EXISTS `signup1` ( `id` INT(100) NOT NULL AUTO_INCREMENT , `firstname` VARCHAR(100) NOT NULL ,`lastname` VARCHAR(25) NOT NULL,`address` VARCHAR(50) NOT NULL ,`city` CHAR(50) NOT NULL ,`phonenumber` INT(50) NOT NULL ,`email` VARCHAR(50) NOT NULL ,`user` CHAR(50) NOT NULL ,`username` VARCHAR(50) NOT NULL ,`password` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`, `username`)) ENGINE = InnoDB;";
-// if (mysqli_query($conn, $sqlcreate)) {
-
 if ($user == "admin") {
 ?>
     <script>
@@ -63,7 +60,6 @@ if ($count > 0) {
         <?php
     }
     if ($user == "employee") {
-
         $sql = "INSERT INTO signup1 VALUES(NULL,'$firstname','$lastname','$address','$city','$phonenumber','$email','$gender','$user','$username','$password') ";
         if (mysqli_query($conn, $sql)) {
             if ($password == $confirm_password) {
@@ -86,5 +82,4 @@ if ($count > 0) {
         mysqli_close($conn);
     }
 }
-// }
 ?>
