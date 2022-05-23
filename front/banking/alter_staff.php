@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin_login']))
     //header('location:adminlogin.php');   
 ?>
 <?php
-if (isset($_POST['alter'])) {
+if (isset($_REQUEST['alter'])) {
     // $name =  mysql_real_escape_string($_REQUEST['edit_name']);
     // $gender =  mysql_real_escape_string($_REQUEST['edit_gender']);
     // $dob =  mysql_real_escape_string($_REQUEST['edit_dob']);
@@ -21,13 +21,13 @@ if (isset($_POST['alter'])) {
     $phonenumber = isset($_REQUEST['phonenumber']);
     $email = isset($_REQUEST['email']);
     $username = isset($_REQUEST['username']);
-    $id = $_REQUEST['staff_id'];
+    $id = isset($_REQUEST['id']);
     $sql = "UPDATE `signup1` SET firstname='$fname',address='$address',city='$city',phonenumber='$phonenumber',email='$email',username='$username' WHERE id='$id'";
     // $sql = "UPDATE staff SET  name='$name', dob='$dob', relationship='$status', 
     //     department='$dept', doj='$doj', address='$address', 
     //         mobile='$mobile', gender='$gender' WHERE id='$id'";
-
+    echo "a";
     mysqli_query($conn, $sql);
-    header('location:admin_hompage.php');
+    //header('location:admin_hompage.php');
 }
 ?>

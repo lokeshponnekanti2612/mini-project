@@ -48,29 +48,30 @@ $rws_min =  mysqli_fetch_array($result_min);
                     <h3><u>Staff Details</u></h3>
                 </caption>
                 <th>id</th>
-                <th>name</th>
-                <th>gender</th>
-                <th>DOB</th>
-                <th>relationship</th>
-                <th>department</th>
-                <th>DOJ</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
                 <th>address</th>
-                <th>mobile</th>
+                <th>City</th>
+                <th>Phonenumber</th>
                 <th>email</th>
+                <th>gender</th>
+                <th>Username</th>
+                <th>password</th>
                 <?php
                 while ($rws =  mysqli_fetch_array($result)) {
                     echo "<tr><td><input type='radio' name='staff_id' value=" . $rws[0];
                     if ($rws[0] == $rws_min[0]) echo ' checked';
                     echo " /></td>";
                     echo "<td>" . $rws[1] . "</td>";
-                    echo "<td>" . $rws[10] . "</td>";
+
                     echo "<td>" . $rws[2] . "</td>";
                     echo "<td>" . $rws[3] . "</td>";
                     echo "<td>" . $rws[4] . "</td>";
                     echo "<td>" . $rws[5] . "</td>";
                     echo "<td>" . $rws[6] . "</td>";
                     echo "<td>" . $rws[7] . "</td>";
-                    echo "<td>" . $rws[8] . "</td>";
+                    echo "<td>" . $rws[9] . "</td>";
+                    echo "<td>" . $rws[10] . "</td>";
                     echo "</tr>";
                 }
                 ?>

@@ -7,20 +7,21 @@ if (!isset($_SESSION['admin_login']))
 <!DOCTYPE html>
 <?php
 include '_inc/dbconn.php';
-if (isset($_POST['submit1_id'])) {
-    $id =  mysqli_real_escape_string($conn, $staff_id);
+if (isset($_REQUEST['submit1_id'])) {
+    $id =  mysqli_real_escape_string($conn, $_REQUEST['staff_id']);
     $sql = "SELECT * FROM `signup1` WHERE id=$id";
     $result =  mysqli_query($conn, $sql);
     $rws =  mysqli_fetch_array($result);
+}
 ?>
 <?php
-    $delete_id =  mysqli_real_escape_string($conn, $_REQUEST['staff_id']);
-    if (isset($_REQUEST['submit2_id'])) {
-        $sql_delete = "DELETE FROM `signup1` WHERE `id` = '$delete_id'";
-        mysqli_query($conn, $sql_delete);
-        header('location:delete_staff.php');
-    }
+$delete_id =  mysqli_real_escape_string($conn, $_REQUEST['staff_id']);
+if (isset($_REQUEST['submit2_id'])) {
+    $sql_delete = "DELETE FROM `signup1` WHERE `id` = '$delete_id'";
+    mysqli_query($conn, $sql_delete);
+    header('location:delete_staff.php');
 }
+
 ?>
 <html>
 

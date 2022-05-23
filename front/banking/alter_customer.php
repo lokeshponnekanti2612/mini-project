@@ -16,7 +16,7 @@ $nominee =  mysqli_real_escape_string($conn, $_REQUEST['edit_nominee']);
 $address =  mysqli_real_escape_string($conn, $_REQUEST['edit_address']);
 $mobile =  mysqli_real_escape_string($conn, $_REQUEST['edit_mobile']);
 
-$sql = "UPDATE customer SET  name='$name', dob='$dob', nominee='$nominee', type='$type', 
+$sql = "UPDATE customer SET  name='$name', dob='$dob', nominee='$nominee',  
      address='$address', 
         mobile='$mobile', gender='$gender' WHERE id='$id'";
 mysqli_query($conn, $sql);
