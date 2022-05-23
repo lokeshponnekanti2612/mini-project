@@ -47,7 +47,7 @@ if ($count > 0) {
 ?>
     <script>
         alert("Username is already taken");
-        document.location = "addcustomer.php"
+        document.location = "signup1.php"
     </script>
     <?php
 } else {
@@ -72,7 +72,7 @@ if ($count > 0) {
             ?>
                 <script>
                     alert("Check Your Details Correctly");
-                    document.location = "addcustomer.php"
+                    document.location = "signup1.php"
                 </script>
 <?php
             }
