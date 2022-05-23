@@ -43,7 +43,7 @@ $sql1 = "CREATE TABLE passbook" . $id . "
     (transactionid int(5) AUTO_INCREMENT, transactiondate date, name VARCHAR(255), branch VARCHAR(255), ifsc VARCHAR(255), credit int(10), debit int(10), 
     amount float(10,2), narration VARCHAR(255), PRIMARY KEY (transactionid))";
 
-$sql = "insert into customer values('','$name','$gender','$dob','$nominee','$type','$address','$mobile',
+$sql = "insert into `customer` values(NULL,'$name','$gender','$dob','$nominee','$type','$user','$address','$mobile',
     '$email','$password','$branch','$ifsc')";
 mysqli_query($conn, $sql);
 mysqli_query($conn, $sql1);
