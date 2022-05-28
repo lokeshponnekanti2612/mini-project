@@ -17,6 +17,20 @@ if (!isset($_SESSION["type"]))
 <div class='content'>
 
     <?php include 'admin_navbar.php' ?>
+    <?php
+    include '_inc/dbconn.php';
+    $staff_id = $_SESSION['username'];
+
+    $sql = "SELECT * FROM signup1 WHERE username='$staff_id'";
+    $result =  mysqli_query($conn, $sql);
+    $rws =  mysqli_fetch_array($result);
+    $name = $rws[2];
+    $_SESSION['name1'] = $name;
+    ?>
+    <div class="customer_top_nav">
+        <div class="text">Welcome <?php echo $_SESSION['name1'] ?></div>
+    </div>
+
     <div class='admin_staff'>
 
         <ul>

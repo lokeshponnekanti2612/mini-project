@@ -19,20 +19,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.location = "security.php"
             </script>
         <?php
-        } else if ($row['username'] == $username && $row['password'] == $password) {
+        }
+        if (
+            $row['username'] == $username and $row['password'] == $password and
+            $_SESSION["type"] == 'admin'
+        ) {
 
             $_SESSION['submit'] = "1";
 
         ?>
             <script>
-                alert("hi");
                 document.location = "pattern_login.php"
             </script>
-        <?php
+            <?php
+        }
+        if (password_verify($password, $row['password'])) {
+
+            if ($row['username'] == $username) {
+
+                $_SESSION['submit'] = "1";
+
+            ?>
+                <script>
+                    document.location = "pattern_login.php"
+                </script>
+            <?php
+            }
         } else {
-        ?>
+            ?>
             <script>
-                alert("invalid password");
+                alert("invalid password1234");
                 document.location = "security.php"
             </script>
         <?php

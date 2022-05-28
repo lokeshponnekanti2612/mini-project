@@ -19,8 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$sql = "SELECT * FROM `pattern1` WHERE `username`='$user' AND `pattern`='$b' AND `user`='admin'";
 	$res = mysqli_query($conn, $sql);
 	if ($res) {
+
 		$result = mysqli_fetch_array($res);
 		if ($result) {
+
+
 			echo "h";
 ?>
 			<script>
@@ -32,16 +35,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		} else {
 			echo "K";
 
-			$sql1 = "SELECT * FROM `pattern1` WHERE `username`='$user' AND `pattern`='$b' AND `user`='employee'";
+			$sql1 = "SELECT * FROM `pattern1` WHERE `username`='$user'  AND `pattern`='$b' AND `user`='employee'";
 			$res1 = mysqli_query($conn, $sql1);
 			if ($res1) {
-				$result1 = mysqli_fetch_array($res1);
-				echo "a";
+				$result = mysqli_fetch_array($res1);
+				if ($result) {
+
+					echo "a";
 
 
 
-				echo "b";
-				header("location:./banking/staff_homepage.php");
+					echo "b";
+					header("location:./banking/staff_homepage.php");
+				}
 			} else {
 			?>
 				<script>
@@ -51,6 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<?php
 			}
 		}
+	} else {
+		echo "f";
 	}
 } else {
 	?>

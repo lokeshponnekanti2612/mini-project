@@ -20,7 +20,7 @@
 
     <div class="contact">
         <h3 style="color:#2E4372;"><u>Hyderabad Branch</u></h3>
-        <p><span class="heading">Address - </span>Globsyn Buisness School, IBRAD buisness school, hyderabad.</p>
+        <p><span class="heading">Address - </span>Opp Hyderabad high school, IBRAD buisness school, hyderabad.</p>
         <p><span class="heading">Tel - </span>0987654321</p>
         <p><span class="heading">Email - </span>hyderabadbranch@onlinebank.com</p>
 

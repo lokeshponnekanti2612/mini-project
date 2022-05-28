@@ -34,17 +34,27 @@ if (isset($_REQUEST['submit'])) {
 		</script>
 <?php
 	} else {
-		$res = mysqli_query($conn, "SELECT * FROM signup1 WHERE `username`='{$_SESSION['username']}' AND `password`='$b' AND `user`='{$_SESSION['type']}'");
-		$result = mysqli_fetch_array($res);
 
+
+
+		$res = mysqli_query($conn, "SELECT * FROM signup1 WHERE `username`='{$_SESSION['username']}'  AND `user`='{$_SESSION['type']}'");
+		$result = mysqli_fetch_array($res);
 		if ($result['user'] == "admin") {
 			$_SESSION["submit"] = "1";
 			header("location:security.php");
-		} elseif ($result['user'] == "employee") {
-			$_SESSION["submit"] = "1";
-			header("location:security.php");
-		} else {
+		}
+		if ($_SESSION['username'] != isset($result['username'])) {
 			header("location:loginre.php");
+		} else if (password_verify($b, $result['password'])) {
+
+			if ($result['user'] == "employee") {
+				$_SESSION["submit"] = "1";
+				header("location:security.php");
+			} else {
+				header("location:loginre.php");
+			}
+		} else {
+			echo "h";
 		}
 	}
 }

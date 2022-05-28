@@ -49,37 +49,45 @@ if ($count > 0) {
         alert("Username is already taken");
         document.location = "signup1.php"
     </script>
-    <?php
-} else {
-
-    if ($user == "admin") {
-    ?>
-        <script>
-            document.location = "null.php"
-        </script>
-        <?php
-    }
-    if ($user == "employee") {
-        $sql = "INSERT INTO signup1 VALUES(NULL,'$firstname','$lastname','$address','$city','$phonenumber','$email','$gender','$user','$username','$password') ";
-        if (mysqli_query($conn, $sql)) {
-            if ($password == $confirm_password) {
-        ?>
-                <script>
-                    document.location = "security_signup.php"
-                </script>
-            <?php
-            } else {
-            ?>
-                <script>
-                    alert("Check Your Details Correctly");
-                    document.location = "signup1.php"
-                </script>
 <?php
-            }
+}
+if ($password == $confirm_password) {
+?>
+    <script>
+        document.location = "security_signup.php"
+    </script>
+<?php
+}
+
+if ($user == "admin") {
+?>
+    <script>
+        document.location = "null.php"
+    </script>
+    <?php
+}
+if ($user == "employee") {
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO signup1 VALUES(NULL,'$firstname','$lastname','$address','$city','$phonenumber','$email','$gender','$user','$username','$password') ";
+    if (mysqli_query($conn, $sql)) {
+        if ($password == $confirm_password) {
+    ?>
+            <script>
+                document.location = "security_signup.php"
+            </script>
+        <?php
         } else {
-            echo "ERROR: Sorry $sql." . mysqli_error($conn);
+        ?>
+            <script>
+                alert("Passwords doesn't match..");
+                document.location = "signup1.php"
+            </script>
+<?php
         }
-        mysqli_close($conn);
+    } else {
+        echo "ERROR: Sorry $sql." . mysqli_error($conn);
     }
+    mysqli_close($conn);
 }
 ?>

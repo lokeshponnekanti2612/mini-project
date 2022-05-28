@@ -19,7 +19,7 @@ $conn = new mysqli("localhost", "root", "", "signup_db") or die("mysqli_error()"
 $sqlcreate = "CREATE TABLE IF NOT EXISTS `security` (`id` INT(100) NOT NULL AUTO_INCREMENT , `username` VARCHAR(100) NOT NULL , `question` VARCHAR(250) NOT NULL ,`user` CHAR(25) NOT NULL,`password` VARCHAR(100) NOT NULL, PRIMARY KEY (`id`, `username`)) ENGINE = InnoDB;";
 if (mysqli_query($conn, $sqlcreate)) {
 
-
+	$password = password_hash($password, PASSWORD_DEFAULT);
 	$sql = "INSERT INTO `security`(`username`,`question`,`password`) VALUES('$user','$question','$password')";
 	if (mysqli_query($conn, $sql)) {
 		header("location:pattern1.php");

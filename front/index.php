@@ -23,11 +23,7 @@
 
                 </div>
 
-                <!-- <select name="type" id="user type">
-                <option name="type" value="employee">Employee</option></br>
-                <option name="type" value="admin">Admin</option></br>
-            
-            </select> -->
+
             </div>
             <div class="txt_field">
                 <span></span>
